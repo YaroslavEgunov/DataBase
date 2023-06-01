@@ -21,7 +21,7 @@
         }
 
         private static FormMedicalCardList f;
-        public static FormMedicalCardList fw
+        public static FormMedicalCardList fm
         {
             get
             {

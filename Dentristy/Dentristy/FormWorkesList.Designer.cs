@@ -234,7 +234,7 @@
             this.врачиDataGridView.DataSource = this.врачиBindingSource;
             this.врачиDataGridView.Location = new System.Drawing.Point(12, 28);
             this.врачиDataGridView.Name = "врачиDataGridView";
-            this.врачиDataGridView.Size = new System.Drawing.Size(788, 164);
+            this.врачиDataGridView.Size = new System.Drawing.Size(776, 410);
             this.врачиDataGridView.TabIndex = 1;
             this.врачиDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.врачиDataGridView_CellFormatting);
             // 

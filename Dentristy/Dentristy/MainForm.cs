@@ -51,7 +51,7 @@ namespace Dentistry
 
         private void медицинскиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormMedicalCardList.fw.ShowForm();
+            FormMedicalCardList.fm.ShowForm();
         }
     }
 }

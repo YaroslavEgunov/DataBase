@@ -45,12 +45,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProcList));
             System.Windows.Forms.Label название_ПроцедурыLabel;
             System.Windows.Forms.Label стоимостьLabel;
             System.Windows.Forms.Label анастезияLabel;
             System.Windows.Forms.Label цвет_ПломбыLabel;
             System.Windows.Forms.Label снятие_НалётаLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProcList));
             this.dentistryDataSet = new Dentistry.DentistryDataSet();
             this.список_ПроцедурBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.список_ПроцедурTableAdapter = new Dentistry.DentistryDataSetTableAdapters.Список_ПроцедурTableAdapter();
@@ -83,6 +83,51 @@
             ((System.ComponentModel.ISupportInitialize)(this.список_ПроцедурBindingNavigator)).BeginInit();
             this.список_ПроцедурBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // название_ПроцедурыLabel
+            // 
+            название_ПроцедурыLabel.AutoSize = true;
+            название_ПроцедурыLabel.Location = new System.Drawing.Point(12, 36);
+            название_ПроцедурыLabel.Name = "название_ПроцедурыLabel";
+            название_ПроцедурыLabel.Size = new System.Drawing.Size(120, 13);
+            название_ПроцедурыLabel.TabIndex = 1;
+            название_ПроцедурыLabel.Text = "Название Процедуры:";
+            // 
+            // стоимостьLabel
+            // 
+            стоимостьLabel.AutoSize = true;
+            стоимостьLabel.Location = new System.Drawing.Point(12, 62);
+            стоимостьLabel.Name = "стоимостьLabel";
+            стоимостьLabel.Size = new System.Drawing.Size(65, 13);
+            стоимостьLabel.TabIndex = 3;
+            стоимостьLabel.Text = "Стоимость:";
+            // 
+            // анастезияLabel
+            // 
+            анастезияLabel.AutoSize = true;
+            анастезияLabel.Location = new System.Drawing.Point(12, 90);
+            анастезияLabel.Name = "анастезияLabel";
+            анастезияLabel.Size = new System.Drawing.Size(64, 13);
+            анастезияLabel.TabIndex = 5;
+            анастезияLabel.Text = "Анастезия:";
+            // 
+            // цвет_ПломбыLabel
+            // 
+            цвет_ПломбыLabel.AutoSize = true;
+            цвет_ПломбыLabel.Location = new System.Drawing.Point(12, 118);
+            цвет_ПломбыLabel.Name = "цвет_ПломбыLabel";
+            цвет_ПломбыLabel.Size = new System.Drawing.Size(80, 13);
+            цвет_ПломбыLabel.TabIndex = 7;
+            цвет_ПломбыLabel.Text = "Цвет Пломбы:";
+            // 
+            // снятие_НалётаLabel
+            // 
+            снятие_НалётаLabel.AutoSize = true;
+            снятие_НалётаLabel.Location = new System.Drawing.Point(12, 145);
+            снятие_НалётаLabel.Name = "снятие_НалётаLabel";
+            снятие_НалётаLabel.Size = new System.Drawing.Size(86, 13);
+            снятие_НалётаLabel.TabIndex = 9;
+            снятие_НалётаLabel.Text = "Снятие Налёта:";
             // 
             // dentistryDataSet
             // 
@@ -234,15 +279,6 @@
             this.список_ПроцедурBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.список_ПроцедурBindingNavigatorSaveItem.Click += new System.EventHandler(this.список_ПроцедурBindingNavigatorSaveItem_Click);
             // 
-            // название_ПроцедурыLabel
-            // 
-            название_ПроцедурыLabel.AutoSize = true;
-            название_ПроцедурыLabel.Location = new System.Drawing.Point(12, 36);
-            название_ПроцедурыLabel.Name = "название_ПроцедурыLabel";
-            название_ПроцедурыLabel.Size = new System.Drawing.Size(120, 13);
-            название_ПроцедурыLabel.TabIndex = 1;
-            название_ПроцедурыLabel.Text = "Название Процедуры:";
-            // 
             // название_ПроцедурыTextBox
             // 
             this.название_ПроцедурыTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.список_ПроцедурBindingSource, "Название_Процедуры", true));
@@ -251,31 +287,13 @@
             this.название_ПроцедурыTextBox.Size = new System.Drawing.Size(121, 20);
             this.название_ПроцедурыTextBox.TabIndex = 2;
             // 
-            // стоимостьLabel
-            // 
-            стоимостьLabel.AutoSize = true;
-            стоимостьLabel.Location = new System.Drawing.Point(12, 62);
-            стоимостьLabel.Name = "стоимостьLabel";
-            стоимостьLabel.Size = new System.Drawing.Size(65, 13);
-            стоимостьLabel.TabIndex = 3;
-            стоимостьLabel.Text = "Стоимость:";
-            // 
             // стоимостьTextBox
             // 
-            this.стоимостьTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.список_ПроцедурBindingSource, "Стоимость", true));
+            this.стоимостьTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.список_ПроцедурBindingSource, "Стоимость", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             this.стоимостьTextBox.Location = new System.Drawing.Point(138, 59);
             this.стоимостьTextBox.Name = "стоимостьTextBox";
             this.стоимостьTextBox.Size = new System.Drawing.Size(121, 20);
             this.стоимостьTextBox.TabIndex = 4;
-            // 
-            // анастезияLabel
-            // 
-            анастезияLabel.AutoSize = true;
-            анастезияLabel.Location = new System.Drawing.Point(12, 90);
-            анастезияLabel.Name = "анастезияLabel";
-            анастезияLabel.Size = new System.Drawing.Size(64, 13);
-            анастезияLabel.TabIndex = 5;
-            анастезияLabel.Text = "Анастезия:";
             // 
             // анастезияCheckBox
             // 
@@ -284,17 +302,8 @@
             this.анастезияCheckBox.Name = "анастезияCheckBox";
             this.анастезияCheckBox.Size = new System.Drawing.Size(121, 24);
             this.анастезияCheckBox.TabIndex = 6;
-            this.анастезияCheckBox.Text = "checkBox1";
+            this.анастезияCheckBox.Text = "Необходима";
             this.анастезияCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // цвет_ПломбыLabel
-            // 
-            цвет_ПломбыLabel.AutoSize = true;
-            цвет_ПломбыLabel.Location = new System.Drawing.Point(12, 118);
-            цвет_ПломбыLabel.Name = "цвет_ПломбыLabel";
-            цвет_ПломбыLabel.Size = new System.Drawing.Size(80, 13);
-            цвет_ПломбыLabel.TabIndex = 7;
-            цвет_ПломбыLabel.Text = "Цвет Пломбы:";
             // 
             // цвет_ПломбыComboBox
             // 
@@ -307,15 +316,6 @@
             this.цвет_ПломбыComboBox.Name = "цвет_ПломбыComboBox";
             this.цвет_ПломбыComboBox.Size = new System.Drawing.Size(121, 21);
             this.цвет_ПломбыComboBox.TabIndex = 8;
-            // 
-            // снятие_НалётаLabel
-            // 
-            снятие_НалётаLabel.AutoSize = true;
-            снятие_НалётаLabel.Location = new System.Drawing.Point(12, 145);
-            снятие_НалётаLabel.Name = "снятие_НалётаLabel";
-            снятие_НалётаLabel.Size = new System.Drawing.Size(86, 13);
-            снятие_НалётаLabel.TabIndex = 9;
-            снятие_НалётаLabel.Text = "Снятие Налёта:";
             // 
             // снятие_НалётаComboBox
             // 
