@@ -44,27 +44,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMedicalCardList));
             System.Windows.Forms.Label номер_КартыLabel;
             System.Windows.Forms.Label данные_о_леченииLabel;
             System.Windows.Forms.Label данные_о_клиентеLabel;
             System.Windows.Forms.Label фото_клиентаLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMedicalCardList));
             this.dentistryDataSet = new Dentistry.DentistryDataSet();
             this.медицинская_картаBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.медицинская_картаTableAdapter = new Dentistry.DentistryDataSetTableAdapters.Медицинская_картаTableAdapter();
             this.tableAdapterManager = new Dentistry.DentistryDataSetTableAdapters.TableAdapterManager();
             this.медицинская_картаBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.медицинская_картаBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.номер_КартыTextBox = new System.Windows.Forms.TextBox();
             this.данные_о_леченииTextBox = new System.Windows.Forms.TextBox();
@@ -82,6 +82,42 @@
             this.медицинская_картаBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.фото_клиентаPictureBox)).BeginInit();
             this.SuspendLayout();
+            // 
+            // номер_КартыLabel
+            // 
+            номер_КартыLabel.AutoSize = true;
+            номер_КартыLabel.Location = new System.Drawing.Point(12, 41);
+            номер_КартыLabel.Name = "номер_КартыLabel";
+            номер_КартыLabel.Size = new System.Drawing.Size(79, 13);
+            номер_КартыLabel.TabIndex = 1;
+            номер_КартыLabel.Text = "Номер Карты:";
+            // 
+            // данные_о_леченииLabel
+            // 
+            данные_о_леченииLabel.AutoSize = true;
+            данные_о_леченииLabel.Location = new System.Drawing.Point(276, 68);
+            данные_о_леченииLabel.Name = "данные_о_леченииLabel";
+            данные_о_леченииLabel.Size = new System.Drawing.Size(104, 13);
+            данные_о_леченииLabel.TabIndex = 3;
+            данные_о_леченииLabel.Text = "Данные о лечении:";
+            // 
+            // данные_о_клиентеLabel
+            // 
+            данные_о_клиентеLabel.AutoSize = true;
+            данные_о_клиентеLabel.Location = new System.Drawing.Point(12, 68);
+            данные_о_клиентеLabel.Name = "данные_о_клиентеLabel";
+            данные_о_клиентеLabel.Size = new System.Drawing.Size(104, 13);
+            данные_о_клиентеLabel.TabIndex = 5;
+            данные_о_клиентеLabel.Text = "Данные о клиенте:";
+            // 
+            // фото_клиентаLabel
+            // 
+            фото_клиентаLabel.AutoSize = true;
+            фото_клиентаLabel.Location = new System.Drawing.Point(536, 68);
+            фото_клиентаLabel.Name = "фото_клиентаLabel";
+            фото_клиентаLabel.Size = new System.Drawing.Size(82, 13);
+            фото_клиентаLabel.TabIndex = 7;
+            фото_клиентаLabel.Text = "Фото клиента:";
             // 
             // dentistryDataSet
             // 
@@ -138,38 +174,6 @@
             this.медицинская_картаBindingNavigator.TabIndex = 0;
             this.медицинская_картаBindingNavigator.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -178,6 +182,13 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -206,6 +217,26 @@
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -224,6 +255,11 @@
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // медицинская_картаBindingNavigatorSaveItem
             // 
             this.медицинская_картаBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -233,15 +269,6 @@
             this.медицинская_картаBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.медицинская_картаBindingNavigatorSaveItem.Click += new System.EventHandler(this.медицинская_картаBindingNavigatorSaveItem_Click);
             // 
-            // номер_КартыLabel
-            // 
-            номер_КартыLabel.AutoSize = true;
-            номер_КартыLabel.Location = new System.Drawing.Point(12, 41);
-            номер_КартыLabel.Name = "номер_КартыLabel";
-            номер_КартыLabel.Size = new System.Drawing.Size(79, 13);
-            номер_КартыLabel.TabIndex = 1;
-            номер_КартыLabel.Text = "Номер Карты:";
-            // 
             // номер_КартыTextBox
             // 
             this.номер_КартыTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.медицинская_картаBindingSource, "Номер_Карты", true));
@@ -249,15 +276,6 @@
             this.номер_КартыTextBox.Name = "номер_КартыTextBox";
             this.номер_КартыTextBox.Size = new System.Drawing.Size(139, 20);
             this.номер_КартыTextBox.TabIndex = 2;
-            // 
-            // данные_о_леченииLabel
-            // 
-            данные_о_леченииLabel.AutoSize = true;
-            данные_о_леченииLabel.Location = new System.Drawing.Point(276, 68);
-            данные_о_леченииLabel.Name = "данные_о_леченииLabel";
-            данные_о_леченииLabel.Size = new System.Drawing.Size(104, 13);
-            данные_о_леченииLabel.TabIndex = 3;
-            данные_о_леченииLabel.Text = "Данные о лечении:";
             // 
             // данные_о_леченииTextBox
             // 
@@ -269,15 +287,6 @@
             this.данные_о_леченииTextBox.Size = new System.Drawing.Size(221, 194);
             this.данные_о_леченииTextBox.TabIndex = 4;
             // 
-            // данные_о_клиентеLabel
-            // 
-            данные_о_клиентеLabel.AutoSize = true;
-            данные_о_клиентеLabel.Location = new System.Drawing.Point(12, 68);
-            данные_о_клиентеLabel.Name = "данные_о_клиентеLabel";
-            данные_о_клиентеLabel.Size = new System.Drawing.Size(104, 13);
-            данные_о_клиентеLabel.TabIndex = 5;
-            данные_о_клиентеLabel.Text = "Данные о клиенте:";
-            // 
             // данные_о_клиентеTextBox
             // 
             this.данные_о_клиентеTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.медицинская_картаBindingSource, "Данные_о_клиенте", true));
@@ -287,15 +296,6 @@
             this.данные_о_клиентеTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.данные_о_клиентеTextBox.Size = new System.Drawing.Size(221, 194);
             this.данные_о_клиентеTextBox.TabIndex = 6;
-            // 
-            // фото_клиентаLabel
-            // 
-            фото_клиентаLabel.AutoSize = true;
-            фото_клиентаLabel.Location = new System.Drawing.Point(536, 68);
-            фото_клиентаLabel.Name = "фото_клиентаLabel";
-            фото_клиентаLabel.Size = new System.Drawing.Size(82, 13);
-            фото_клиентаLabel.TabIndex = 7;
-            фото_клиентаLabel.Text = "Фото клиента:";
             // 
             // фото_клиентаPictureBox
             // 
@@ -321,11 +321,11 @@
             // 
             this.openFileDialogPhoto.FileName = "openFileDialog1";
             // 
-            // FormMedicalСard
+            // FormMedicalCardList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 342);
             this.Controls.Add(this.buttonOpenPhoto);
             this.Controls.Add(номер_КартыLabel);
             this.Controls.Add(this.номер_КартыTextBox);
@@ -336,7 +336,7 @@
             this.Controls.Add(фото_клиентаLabel);
             this.Controls.Add(this.фото_клиентаPictureBox);
             this.Controls.Add(this.медицинская_картаBindingNavigator);
-            this.Name = "FormMedicalСard";
+            this.Name = "FormMedicalCardList";
             this.Text = "Список медицинских карт";
             this.Load += new System.EventHandler(this.FormMedicalСard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dentistryDataSet)).EndInit();

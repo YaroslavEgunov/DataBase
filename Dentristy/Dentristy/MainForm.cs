@@ -53,5 +53,15 @@ namespace Dentistry
         {
             FormMedicalCardList.fm.ShowForm();
         }
+
+        private void распределённыеСотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDistributedWorkersList.fdw.ShowForm();
+        }
+
+        private void записиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRegistrationList.fr.ShowForm();
+        }
     }
 }

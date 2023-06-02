@@ -38,6 +38,9 @@
             this.процедурыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.медицинскиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.занятостьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.распределённыеСотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.записиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +49,8 @@
             this.процедурыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.врачиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.медицинскиеКартыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.занятостьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.распределённыеСотрудникиToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMain = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -54,6 +59,9 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.записиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -63,7 +71,8 @@
             // 
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.справочникToolStripMenuItem});
+            this.справочникToolStripMenuItem,
+            this.занятостьToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Size = new System.Drawing.Size(800, 24);
@@ -81,7 +90,7 @@
             // 
             // выходToolStripMenuItem
             // 
-            this.выходToolStripMenuItem.Image = global::Dentistry.Properties.Resources.Exit_50x501;
+            this.выходToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("выходToolStripMenuItem.Image")));
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
@@ -135,13 +144,40 @@
             this.медицинскиToolStripMenuItem.Text = "Медицинские карты";
             this.медицинскиToolStripMenuItem.Click += new System.EventHandler(this.медицинскиToolStripMenuItem_Click);
             // 
+            // занятостьToolStripMenuItem
+            // 
+            this.занятостьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.распределённыеСотрудникиToolStripMenuItem,
+            this.записиToolStripMenuItem});
+            this.занятостьToolStripMenuItem.Name = "занятостьToolStripMenuItem";
+            this.занятостьToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.занятостьToolStripMenuItem.Text = "Занятость";
+            // 
+            // распределённыеСотрудникиToolStripMenuItem
+            // 
+            this.распределённыеСотрудникиToolStripMenuItem.Image = global::Dentistry.Properties.Resources.DistWorkers_50x50;
+            this.распределённыеСотрудникиToolStripMenuItem.Name = "распределённыеСотрудникиToolStripMenuItem";
+            this.распределённыеСотрудникиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Delete)));
+            this.распределённыеСотрудникиToolStripMenuItem.Size = new System.Drawing.Size(281, 22);
+            this.распределённыеСотрудникиToolStripMenuItem.Text = "Распределённые сотрудники";
+            this.распределённыеСотрудникиToolStripMenuItem.Click += new System.EventHandler(this.распределённыеСотрудникиToolStripMenuItem_Click);
+            // 
+            // записиToolStripMenuItem
+            // 
+            this.записиToolStripMenuItem.Image = global::Dentistry.Properties.Resources.Registration_50x50;
+            this.записиToolStripMenuItem.Name = "записиToolStripMenuItem";
+            this.записиToolStripMenuItem.Size = new System.Drawing.Size(281, 22);
+            this.записиToolStripMenuItem.Text = "Записи";
+            this.записиToolStripMenuItem.Click += new System.EventHandler(this.записиToolStripMenuItem_Click);
+            // 
             // contextMenuStripMain
             // 
             this.contextMenuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.справочникиToolStripMenuItem});
+            this.справочникиToolStripMenuItem,
+            this.занятостьToolStripMenuItem1});
             this.contextMenuStripMain.Name = "contextMenuStripMain";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(150, 48);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(150, 70);
             // 
             // toolStripMenuItem1
             // 
@@ -154,7 +190,7 @@
             // 
             // выходToolStripMenuItem1
             // 
-            this.выходToolStripMenuItem1.Image = global::Dentistry.Properties.Resources.Exit_50x501;
+            this.выходToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("выходToolStripMenuItem1.Image")));
             this.выходToolStripMenuItem1.Name = "выходToolStripMenuItem1";
             this.выходToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
             this.выходToolStripMenuItem1.Text = "Выход";
@@ -202,6 +238,23 @@
             this.медицинскиеКартыToolStripMenuItem.Text = "Медицинские карты";
             this.медицинскиеКартыToolStripMenuItem.Click += new System.EventHandler(this.медицинскиToolStripMenuItem_Click);
             // 
+            // занятостьToolStripMenuItem1
+            // 
+            this.занятостьToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.распределённыеСотрудникиToolStripMenuItem2,
+            this.записиToolStripMenuItem1});
+            this.занятостьToolStripMenuItem1.Name = "занятостьToolStripMenuItem1";
+            this.занятостьToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
+            this.занятостьToolStripMenuItem1.Text = "Занятость";
+            // 
+            // распределённыеСотрудникиToolStripMenuItem2
+            // 
+            this.распределённыеСотрудникиToolStripMenuItem2.Image = global::Dentistry.Properties.Resources.DistWorkers_50x50;
+            this.распределённыеСотрудникиToolStripMenuItem2.Name = "распределённыеСотрудникиToolStripMenuItem2";
+            this.распределённыеСотрудникиToolStripMenuItem2.Size = new System.Drawing.Size(234, 22);
+            this.распределённыеСотрудникиToolStripMenuItem2.Text = "Распределённые сотрудники";
+            this.распределённыеСотрудникиToolStripMenuItem2.Click += new System.EventHandler(this.распределённыеСотрудникиToolStripMenuItem_Click);
+            // 
             // toolStripMain
             // 
             this.toolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -211,7 +264,9 @@
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripButton5,
-            this.toolStripSeparator2});
+            this.toolStripSeparator2,
+            this.toolStripButton6,
+            this.toolStripButton7});
             this.toolStripMain.Location = new System.Drawing.Point(0, 24);
             this.toolStripMain.Name = "toolStripMain";
             this.toolStripMain.Size = new System.Drawing.Size(800, 25);
@@ -221,7 +276,7 @@
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Dentistry.Properties.Resources.Exit_50x501;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
@@ -278,6 +333,34 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = global::Dentistry.Properties.Resources.DistWorkers_50x50;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton6.Text = "toolStripButton6";
+            this.toolStripButton6.Click += new System.EventHandler(this.распределённыеСотрудникиToolStripMenuItem_Click);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = global::Dentistry.Properties.Resources.Registration_50x50;
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton7.Text = "toolStripButton7";
+            this.toolStripButton7.Click += new System.EventHandler(this.записиToolStripMenuItem_Click);
+            // 
+            // записиToolStripMenuItem1
+            // 
+            this.записиToolStripMenuItem1.Image = global::Dentistry.Properties.Resources.Registration_50x50;
+            this.записиToolStripMenuItem1.Name = "записиToolStripMenuItem1";
+            this.записиToolStripMenuItem1.Size = new System.Drawing.Size(234, 22);
+            this.записиToolStripMenuItem1.Text = "Записи";
+            this.записиToolStripMenuItem1.Click += new System.EventHandler(this.записиToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,7 +412,15 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripMenuItem занятостьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem распределённыеСотрудникиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem занятостьToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem распределённыеСотрудникиToolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem записиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripMenuItem записиToolStripMenuItem1;
     }
 }
 

@@ -42,9 +42,9 @@ namespace Dentistry {
         
         private global::System.Data.DataRelation relationFK_Заявка_Медицинская_карта;
         
-        private global::System.Data.DataRelation relationFK_Распределённые_Врачи_Номер_Паспорта;
-        
         private global::System.Data.DataRelation relationFK_Распределённые_Врачи_Список_Процедур;
+        
+        private global::System.Data.DataRelation relationFK_Распределённые_Врачи_Номер_Паспорта;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -57,6 +57,7 @@ namespace Dentistry {
             base.Tables.CollectionChanged += schemaChangedHandler;
             base.Relations.CollectionChanged += schemaChangedHandler;
             this.EndInit();
+            this.InitExpressions();
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -68,6 +69,9 @@ namespace Dentistry {
                 global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler1 = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
                 this.Tables.CollectionChanged += schemaChangedHandler1;
                 this.Relations.CollectionChanged += schemaChangedHandler1;
+                if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.ExcludeSchema)) {
+                    this.InitExpressions();
+                }
                 return;
             }
             string strSchema = ((string)(info.GetValue("XmlSchema", typeof(string))));
@@ -103,6 +107,7 @@ namespace Dentistry {
             }
             else {
                 this.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                this.InitExpressions();
             }
             this.GetSerializationData(info, context);
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -214,6 +219,7 @@ namespace Dentistry {
         public override global::System.Data.DataSet Clone() {
             DentistryDataSet cln = ((DentistryDataSet)(base.Clone()));
             cln.InitVars();
+            cln.InitExpressions();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
         }
@@ -327,8 +333,8 @@ namespace Dentistry {
             this.relationFK_Записи_Заявка = this.Relations["FK_Записи_Заявка"];
             this.relationFK_Записи_Распределённые_Врачи = this.Relations["FK_Записи_Распределённые_Врачи"];
             this.relationFK_Заявка_Медицинская_карта = this.Relations["FK_Заявка_Медицинская_карта"];
-            this.relationFK_Распределённые_Врачи_Номер_Паспорта = this.Relations["FK_Распределённые_Врачи_Номер_Паспорта"];
             this.relationFK_Распределённые_Врачи_Список_Процедур = this.Relations["FK_Распределённые_Врачи_Список_Процедур"];
+            this.relationFK_Распределённые_Врачи_Номер_Паспорта = this.Relations["FK_Распределённые_Врачи_Номер_Паспорта"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -347,9 +353,9 @@ namespace Dentistry {
             base.Tables.Add(this.tableЗаявка);
             this.tableМедицинская_карта = new Медицинская_картаDataTable();
             base.Tables.Add(this.tableМедицинская_карта);
-            this.tableРаспределённые_Врачи = new Распределённые_ВрачиDataTable();
+            this.tableРаспределённые_Врачи = new Распределённые_ВрачиDataTable(false);
             base.Tables.Add(this.tableРаспределённые_Врачи);
-            this.tableСписок_Процедур = new Список_ПроцедурDataTable();
+            this.tableСписок_Процедур = new Список_ПроцедурDataTable(false);
             base.Tables.Add(this.tableСписок_Процедур);
             this.relationFK_Записи_Заявка = new global::System.Data.DataRelation("FK_Записи_Заявка", new global::System.Data.DataColumn[] {
                         this.tableЗаявка.Номер_ЗаявкиColumn}, new global::System.Data.DataColumn[] {
@@ -365,14 +371,14 @@ namespace Dentistry {
                         this.tableМедицинская_карта.Номер_КартыColumn}, new global::System.Data.DataColumn[] {
                         this.tableЗаявка.Номер_КартыColumn}, false);
             this.Relations.Add(this.relationFK_Заявка_Медицинская_карта);
-            this.relationFK_Распределённые_Врачи_Номер_Паспорта = new global::System.Data.DataRelation("FK_Распределённые_Врачи_Номер_Паспорта", new global::System.Data.DataColumn[] {
-                        this.tableВрачи.Номер_ПаспортаColumn}, new global::System.Data.DataColumn[] {
-                        this.tableРаспределённые_Врачи.Номер_ПаспортаColumn}, false);
-            this.Relations.Add(this.relationFK_Распределённые_Врачи_Номер_Паспорта);
             this.relationFK_Распределённые_Врачи_Список_Процедур = new global::System.Data.DataRelation("FK_Распределённые_Врачи_Список_Процедур", new global::System.Data.DataColumn[] {
                         this.tableСписок_Процедур.Название_ПроцедурыColumn}, new global::System.Data.DataColumn[] {
                         this.tableРаспределённые_Врачи.Название_ПроцедурыColumn}, false);
             this.Relations.Add(this.relationFK_Распределённые_Врачи_Список_Процедур);
+            this.relationFK_Распределённые_Врачи_Номер_Паспорта = new global::System.Data.DataRelation("FK_Распределённые_Врачи_Номер_Паспорта", new global::System.Data.DataColumn[] {
+                        this.tableВрачи.Номер_ПаспортаColumn}, new global::System.Data.DataColumn[] {
+                        this.tableРаспределённые_Врачи.Номер_ПаспортаColumn}, false);
+            this.Relations.Add(this.relationFK_Распределённые_Врачи_Номер_Паспорта);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -464,6 +470,13 @@ namespace Dentistry {
             }
             xs.Add(dsSchema);
             return type;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitExpressions() {
+            this.Распределённые_Врачи.СотрудникColumn.Expression = "Parent(FK_Распределённые_Врачи_Номер_Паспорта).ФИО_Врача";
+            this.Список_Процедур.Общая_стоимостьColumn.Expression = "Стоимость*(1-Скидка)";
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1729,12 +1742,23 @@ namespace Dentistry {
             
             private global::System.Data.DataColumn columnСтаж_Работы;
             
+            private global::System.Data.DataColumn columnСотрудник;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Распределённые_ВрачиDataTable() {
+            public Распределённые_ВрачиDataTable() : 
+                    this(false) {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Распределённые_ВрачиDataTable(bool initExpressions) {
                 this.TableName = "Распределённые_Врачи";
                 this.BeginInit();
                 this.InitClass();
+                if ((initExpressions == true)) {
+                    this.InitExpressions();
+                }
                 this.EndInit();
             }
             
@@ -1788,6 +1812,14 @@ namespace Dentistry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn СотрудникColumn {
+                get {
+                    return this.columnСотрудник;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1823,12 +1855,33 @@ namespace Dentistry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Распределённые_ВрачиRow AddРаспределённые_ВрачиRow(ВрачиRow parentВрачиRowByFK_Распределённые_Врачи_Номер_Паспорта, Список_ПроцедурRow parentСписок_ПроцедурRowByFK_Распределённые_Врачи_Список_Процедур, int Стаж_Работы, string Сотрудник) {
+                Распределённые_ВрачиRow rowРаспределённые_ВрачиRow = ((Распределённые_ВрачиRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        Стаж_Работы,
+                        Сотрудник};
+                if ((parentВрачиRowByFK_Распределённые_Врачи_Номер_Паспорта != null)) {
+                    columnValuesArray[0] = parentВрачиRowByFK_Распределённые_Врачи_Номер_Паспорта[0];
+                }
+                if ((parentСписок_ПроцедурRowByFK_Распределённые_Врачи_Список_Процедур != null)) {
+                    columnValuesArray[1] = parentСписок_ПроцедурRowByFK_Распределённые_Врачи_Список_Процедур[0];
+                }
+                rowРаспределённые_ВрачиRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowРаспределённые_ВрачиRow);
+                return rowРаспределённые_ВрачиRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Распределённые_ВрачиRow AddРаспределённые_ВрачиRow(ВрачиRow parentВрачиRowByFK_Распределённые_Врачи_Номер_Паспорта, Список_ПроцедурRow parentСписок_ПроцедурRowByFK_Распределённые_Врачи_Список_Процедур, int Стаж_Работы) {
                 Распределённые_ВрачиRow rowРаспределённые_ВрачиRow = ((Распределённые_ВрачиRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        Стаж_Работы};
+                        Стаж_Работы,
+                        null};
                 if ((parentВрачиRowByFK_Распределённые_Врачи_Номер_Паспорта != null)) {
                     columnValuesArray[0] = parentВрачиRowByFK_Распределённые_Врачи_Номер_Паспорта[0];
                 }
@@ -1868,6 +1921,7 @@ namespace Dentistry {
                 this.columnНомер_Паспорта = base.Columns["Номер_Паспорта"];
                 this.columnНазвание_Процедуры = base.Columns["Название_Процедуры"];
                 this.columnСтаж_Работы = base.Columns["Стаж_Работы"];
+                this.columnСотрудник = base.Columns["Сотрудник"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1879,6 +1933,8 @@ namespace Dentistry {
                 base.Columns.Add(this.columnНазвание_Процедуры);
                 this.columnСтаж_Работы = new global::System.Data.DataColumn("Стаж_Работы", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnСтаж_Работы);
+                this.columnСотрудник = new global::System.Data.DataColumn("Сотрудник", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnСотрудник);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnНомер_Паспорта,
                                 this.columnНазвание_Процедуры}, true));
@@ -1887,6 +1943,7 @@ namespace Dentistry {
                 this.columnНазвание_Процедуры.AllowDBNull = false;
                 this.columnНазвание_Процедуры.MaxLength = 100;
                 this.columnСтаж_Работы.AllowDBNull = false;
+                this.columnСотрудник.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1905,6 +1962,12 @@ namespace Dentistry {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
                 return typeof(Распределённые_ВрачиRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitExpressions() {
+                this.СотрудникColumn.Expression = "Parent(FK_Распределённые_Врачи_Номер_Паспорта).ФИО_Врача";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2030,12 +2093,27 @@ namespace Dentistry {
             
             private global::System.Data.DataColumn columnСнятие_Налёта;
             
+            private global::System.Data.DataColumn columnОбщая_стоимость;
+            
+            private global::System.Data.DataColumn columnСкидка;
+            
+            private global::System.Data.DataColumn columnКод_процедуры;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Список_ПроцедурDataTable() {
+            public Список_ПроцедурDataTable() : 
+                    this(false) {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Список_ПроцедурDataTable(bool initExpressions) {
                 this.TableName = "Список_Процедур";
                 this.BeginInit();
                 this.InitClass();
+                if ((initExpressions == true)) {
+                    this.InitExpressions();
+                }
                 this.EndInit();
             }
             
@@ -2105,6 +2183,30 @@ namespace Dentistry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Общая_стоимостьColumn {
+                get {
+                    return this.columnОбщая_стоимость;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn СкидкаColumn {
+                get {
+                    return this.columnСкидка;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Код_процедурыColumn {
+                get {
+                    return this.columnКод_процедуры;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2140,14 +2242,35 @@ namespace Dentistry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Список_ПроцедурRow AddСписок_ПроцедурRow(string Название_Процедуры, decimal Стоимость, bool Анастезия, string Цвет_Пломбы, string Снятие_Налёта) {
+            public Список_ПроцедурRow AddСписок_ПроцедурRow(string Название_Процедуры, decimal Стоимость, bool Анастезия, string Цвет_Пломбы, string Снятие_Налёта, decimal Общая_стоимость, decimal Скидка) {
                 Список_ПроцедурRow rowСписок_ПроцедурRow = ((Список_ПроцедурRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Название_Процедуры,
                         Стоимость,
                         Анастезия,
                         Цвет_Пломбы,
-                        Снятие_Налёта};
+                        Снятие_Налёта,
+                        Общая_стоимость,
+                        Скидка,
+                        null};
+                rowСписок_ПроцедурRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowСписок_ПроцедурRow);
+                return rowСписок_ПроцедурRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Список_ПроцедурRow AddСписок_ПроцедурRow(string Название_Процедуры, decimal Стоимость, bool Анастезия, string Цвет_Пломбы, string Снятие_Налёта, decimal Скидка) {
+                Список_ПроцедурRow rowСписок_ПроцедурRow = ((Список_ПроцедурRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Название_Процедуры,
+                        Стоимость,
+                        Анастезия,
+                        Цвет_Пломбы,
+                        Снятие_Налёта,
+                        null,
+                        Скидка,
+                        null};
                 rowСписок_ПроцедурRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowСписок_ПроцедурRow);
                 return rowСписок_ПроцедурRow;
@@ -2182,6 +2305,9 @@ namespace Dentistry {
                 this.columnАнастезия = base.Columns["Анастезия"];
                 this.columnЦвет_Пломбы = base.Columns["Цвет_Пломбы"];
                 this.columnСнятие_Налёта = base.Columns["Снятие_Налёта"];
+                this.columnОбщая_стоимость = base.Columns["Общая стоимость"];
+                this.columnСкидка = base.Columns["Скидка"];
+                this.columnКод_процедуры = base.Columns["Код_процедуры"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2197,6 +2323,12 @@ namespace Dentistry {
                 base.Columns.Add(this.columnЦвет_Пломбы);
                 this.columnСнятие_Налёта = new global::System.Data.DataColumn("Снятие_Налёта", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnСнятие_Налёта);
+                this.columnОбщая_стоимость = new global::System.Data.DataColumn("Общая стоимость", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnОбщая_стоимость);
+                this.columnСкидка = new global::System.Data.DataColumn("Скидка", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnСкидка);
+                this.columnКод_процедуры = new global::System.Data.DataColumn("Код_процедуры", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКод_процедуры);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnНазвание_Процедуры}, true));
                 this.columnНазвание_Процедуры.AllowDBNull = false;
@@ -2206,6 +2338,10 @@ namespace Dentistry {
                 this.columnАнастезия.AllowDBNull = false;
                 this.columnЦвет_Пломбы.MaxLength = 20;
                 this.columnСнятие_Налёта.MaxLength = 20;
+                this.columnОбщая_стоимость.ReadOnly = true;
+                this.columnСкидка.DefaultValue = ((decimal)(0m));
+                this.columnКод_процедуры.AutoIncrement = true;
+                this.columnКод_процедуры.AutoIncrementSeed = 1;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2224,6 +2360,12 @@ namespace Dentistry {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
                 return typeof(Список_ПроцедурRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitExpressions() {
+                this.Общая_стоимостьColumn.Expression = "Стоимость*(1-Скидка)";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2717,12 +2859,17 @@ namespace Dentistry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ВрачиRow ВрачиRow {
+            public string Сотрудник {
                 get {
-                    return ((ВрачиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Распределённые_Врачи_Номер_Паспорта"])));
+                    try {
+                        return ((string)(this[this.tableРаспределённые_Врачи.СотрудникColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Сотрудник\' в таблице \'Распределённые_Врачи\' равно DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Распределённые_Врачи_Номер_Паспорта"]);
+                    this[this.tableРаспределённые_Врачи.СотрудникColumn] = value;
                 }
             }
             
@@ -2735,6 +2882,29 @@ namespace Dentistry {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Распределённые_Врачи_Список_Процедур"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ВрачиRow ВрачиRow {
+                get {
+                    return ((ВрачиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Распределённые_Врачи_Номер_Паспорта"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Распределённые_Врачи_Номер_Паспорта"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsСотрудникNull() {
+                return this.IsNull(this.tableРаспределённые_Врачи.СотрудникColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetСотрудникNull() {
+                this[this.tableРаспределённые_Врачи.СотрудникColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2830,6 +3000,54 @@ namespace Dentistry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Общая_стоимость {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableСписок_Процедур.Общая_стоимостьColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Общая стоимость\' в таблице \'Список_Процедур\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableСписок_Процедур.Общая_стоимостьColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Скидка {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableСписок_Процедур.СкидкаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Скидка\' в таблице \'Список_Процедур\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableСписок_Процедур.СкидкаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Код_процедуры {
+                get {
+                    try {
+                        return ((int)(this[this.tableСписок_Процедур.Код_процедурыColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Код_процедуры\' в таблице \'Список_Процедур\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableСписок_Процедур.Код_процедурыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsЦвет_ПломбыNull() {
                 return this.IsNull(this.tableСписок_Процедур.Цвет_ПломбыColumn);
             }
@@ -2850,6 +3068,42 @@ namespace Dentistry {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetСнятие_НалётаNull() {
                 this[this.tableСписок_Процедур.Снятие_НалётаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsОбщая_стоимостьNull() {
+                return this.IsNull(this.tableСписок_Процедур.Общая_стоимостьColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetОбщая_стоимостьNull() {
+                this[this.tableСписок_Процедур.Общая_стоимостьColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsСкидкаNull() {
+                return this.IsNull(this.tableСписок_Процедур.СкидкаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetСкидкаNull() {
+                this[this.tableСписок_Процедур.СкидкаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsКод_процедурыNull() {
+                return this.IsNull(this.tableСписок_Процедур.Код_процедурыColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetКод_процедурыNull() {
+                this[this.tableСписок_Процедур.Код_процедурыColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4722,7 +4976,7 @@ SELECT Номер_Паспорта, Название_Процедуры, Ста�
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DentistryDataSet.Распределённые_ВрачиDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DentistryDataSet.Распределённые_ВрачиDataTable dataTable = new DentistryDataSet.Распределённые_ВрачиDataTable();
+            DentistryDataSet.Распределённые_ВрачиDataTable dataTable = new DentistryDataSet.Распределённые_ВрачиDataTable(true);
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5061,7 +5315,7 @@ SELECT Название_Процедуры, Стоимость, Анастези
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Название_Процедуры, Стоимость, Анастезия, Цвет_Пломбы, Снятие_Налёта FROM " +
-                "dbo.Список_Процедур";
+                "Список_Процедур";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5084,7 +5338,7 @@ SELECT Название_Процедуры, Стоимость, Анастези
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DentistryDataSet.Список_ПроцедурDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DentistryDataSet.Список_ПроцедурDataTable dataTable = new DentistryDataSet.Список_ПроцедурDataTable();
+            DentistryDataSet.Список_ПроцедурDataTable dataTable = new DentistryDataSet.Список_ПроцедурDataTable(true);
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

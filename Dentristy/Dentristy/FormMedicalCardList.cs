@@ -19,10 +19,17 @@ namespace Dentistry
 
         private void медицинская_картаBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.медицинская_картаBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dentistryDataSet);
-
+            try
+            {
+                this.Validate();
+                this.медицинская_картаBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.dentistryDataSet);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK,
+               MessageBoxIcon.Error);
+            }
         }
 
         private void FormMedicalСard_Load(object sender, EventArgs e)

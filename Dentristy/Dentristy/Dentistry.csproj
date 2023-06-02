@@ -54,6 +54,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DentistryDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormDistributedWorkersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDistributedWorkersList.Designer.cs">
+      <DependentUpon>FormDistributedWorkersList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMedicalCardList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,12 @@
     </Compile>
     <Compile Include="FormProcList.Designer.cs">
       <DependentUpon>FormProcList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrationList.Designer.cs">
+      <DependentUpon>FormRegistrationList.cs</DependentUpon>
     </Compile>
     <Compile Include="FormWorkesList.cs">
       <SubType>Form</SubType>
@@ -80,11 +92,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDistributedWorkersList.resx">
+      <DependentUpon>FormDistributedWorkersList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMedicalCardList.resx">
       <DependentUpon>FormMedicalCardList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProcList.resx">
       <DependentUpon>FormProcList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrationList.resx">
+      <DependentUpon>FormRegistrationList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWorkesList.resx">
       <DependentUpon>FormWorkesList.cs</DependentUpon>
@@ -136,10 +154,19 @@
     <None Include="Resources\Procedures_50x50.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Exit_50x501.png" />
+    <None Include="Resources\MedCard_50x50.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MedCard_50x50.png" />
+    <None Include="Resources\Exit_50x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DistWorkers_50x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_50x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registration_50x50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
