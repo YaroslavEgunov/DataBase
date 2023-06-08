@@ -36,8 +36,8 @@
             System.Windows.Forms.Label снятие_НалётаLabel;
             System.Windows.Forms.Label общая_стоимостьLabel;
             System.Windows.Forms.Label скидкаLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProcList));
             System.Windows.Forms.Label код_процедурыLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProcList));
             this.список_ПроцедурBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.список_ПроцедурBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -165,6 +165,15 @@
             скидкаLabel.Size = new System.Drawing.Size(47, 13);
             скидкаLabel.TabIndex = 15;
             скидкаLabel.Text = "Скидка:";
+            // 
+            // код_процедурыLabel
+            // 
+            код_процедурыLabel.AutoSize = true;
+            код_процедурыLabel.Location = new System.Drawing.Point(274, 66);
+            код_процедурыLabel.Name = "код_процедурыLabel";
+            код_процедурыLabel.Size = new System.Drawing.Size(87, 13);
+            код_процедурыLabel.TabIndex = 17;
+            код_процедурыLabel.Text = "Код процедуры:";
             // 
             // список_ПроцедурBindingNavigator
             // 
@@ -333,7 +342,8 @@
             this.цвет_ПломбыComboBox.FormattingEnabled = true;
             this.цвет_ПломбыComboBox.Items.AddRange(new object[] {
             "Жёлтый",
-            "Светло-жёлтый"});
+            "Светло-жёлтый",
+            "Белый"});
             this.цвет_ПломбыComboBox.Location = new System.Drawing.Point(138, 148);
             this.цвет_ПломбыComboBox.Name = "цвет_ПломбыComboBox";
             this.цвет_ПломбыComboBox.Size = new System.Drawing.Size(121, 21);
@@ -562,15 +572,6 @@
             // врачиTableAdapter
             // 
             this.врачиTableAdapter.ClearBeforeFill = true;
-            // 
-            // код_процедурыLabel
-            // 
-            код_процедурыLabel.AutoSize = true;
-            код_процедурыLabel.Location = new System.Drawing.Point(274, 66);
-            код_процедурыLabel.Name = "код_процедурыLabel";
-            код_процедурыLabel.Size = new System.Drawing.Size(87, 13);
-            код_процедурыLabel.TabIndex = 17;
-            код_процедурыLabel.Text = "Код процедуры:";
             // 
             // код_процедурыTextBox
             // 

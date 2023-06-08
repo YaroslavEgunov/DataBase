@@ -124,8 +124,14 @@
   <data name="MedCard_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MedCard_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Search_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DistWorkers_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DistWorkers_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Request_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Request_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Exit_50x501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exit_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,19 +139,16 @@
   <data name="Registration_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Registration_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Doctor_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Doctor_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Exit_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exit_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Procedures_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Procedures_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Search_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Doctor_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Doctor_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Request_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Request_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cash_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cash_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
