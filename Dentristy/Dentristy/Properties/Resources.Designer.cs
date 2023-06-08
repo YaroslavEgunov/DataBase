@@ -143,6 +143,16 @@ namespace Dentistry.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Request_50x50 {
+            get {
+                object obj = ResourceManager.GetObject("Request_50x50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Search_50x50 {
             get {
                 object obj = ResourceManager.GetObject("Search_50x50", resourceCulture);

@@ -63,5 +63,10 @@ namespace Dentistry
         {
             FormRegistrationList.fr.ShowForm();
         }
+
+        private void окноЗапросовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSQL.freq.ShowForm();
+        }
     }
 }
